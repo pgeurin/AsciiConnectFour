@@ -1,0 +1,39 @@
+Index: jquery.flot.js
+===================================================================
+--- jquery.flot.js	(revision 154)
++++ jquery.flot.js	(working copy)
+@@ -35,6 +35,7 @@
+                     tickFormatter: null, // fn: number -> string
+                     labelWidth: null, // size of tick labels in pixels
+                     labelHeight: null,
++                    invert: false, // inverts the axis when true
+                     
+                     // mode specific options
+                     tickDecimals: null, // no. of decimals, null means auto
+@@ -44,7 +45,8 @@
+                     timeformat: null // format string to use
+                 },
+                 yaxis: {
+-                    autoscaleMargin: 0.02
++                    autoscaleMargin: 0.02,
++                    invert: true, // inverts the axis when true
+                 },
+                 x2axis: {
+                     autoscaleMargin: null
+@@ -281,6 +283,7 @@
+             for (axis in axes) {
+                 axes[axis].datamin = topSentry;
+                 axes[axis].datamax = bottomSentry;
++                axes[axis].invert = options[axis].invert;
+                 axes[axis].min = options[axis].min;
+                 axes[axis].max = options[axis].max;
+                 axes[axis].used = false;
+@@ -524,7 +527,7 @@
+                 prepareTickGeneration(axis, options);
+                 setTicks(axis, options);
+                 // add transformation helpers
+-                if (axis == axes.xaxis || axis == axes.x2axis) {
++                if ((axis == axes.xaxis || axis == axes.x2axis) && !axis.invert) {
+                     // data point to canvas coordinate
+                     axis.p2c = function (p) { return (p - axis.min) * axis.scale; };
+                     // canvas coordinate to data point 
