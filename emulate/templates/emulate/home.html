@@ -156,6 +156,12 @@
 	<p> Type a number to put your piece in that column. </p>
 	<p> You move first. You are 'X'. Ascii is 'O'. </p>
 	<br/>
+	<p>
+	the board 'b' should be listed here:
+	{{ b }}
+	the last play choice by the computer 'nextplay' should be listed here: {{nextPlay}}
+	The order of moves 'q' should be listed here: {{q}}
+	</p>
 	<br/>
 	<form action="" method="get">
 	<label for="id_q"></label>
@@ -237,9 +243,6 @@ A third more opulent than your sisters? Speak."</textarea></p>
 	-->
 	</form>
 	<br/>
-	<p>
-	{{ b }}
-	</p>
 	<img src="{% static "emulate/pixeltriple2a.gif" %}" class="marginindent" height="4" width="650"> 
 	<br/>
 	<h2> Emulation: </h2>
