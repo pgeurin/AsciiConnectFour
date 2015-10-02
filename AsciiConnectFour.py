@@ -364,4 +364,5 @@ print "Type a number to put your piece in that column."
 print "You move first. You are 'X'. Ascii is 'O'. "
 po = Player('O', 'RANDOM', 3)
 b = Board(7,6)
+b.setBoard('012345')
 b.playGame('human', po)
