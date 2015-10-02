@@ -45,7 +45,23 @@ class Board:
 
         s += '\n'
         return s       # the board is complete, return it
-
+	
+	def htmlSelf(self)
+		""" this method returns a string representation
+            for an object of type Board as an overt html string.
+        """
+		s = ''   # the string to return
+        for row in range( self.height ):
+            s += '|'   # add the spacer character
+            for col in range( self.width ):
+                s += self.data[row][col] + '|'
+            s += '\n'
+        s += '--'*self.width    # add the bottom of the board
+        s += '-\n'
+        for col in range( self.width ):
+            s += ' ' + str(col%10)
+        s += '\n'
+        return s       # the board is complete, return it
 
     def set_board( self, LoS ):
         """ sets the board to the characters in the
@@ -412,7 +428,7 @@ def index(request):
     context = RequestContext(request, {
         'nextPlay': nextPlay, #I need to access poem in there! will this do it?
 		'q': q, 
-		'b': b,
+		'b': b.htmlSelf(),
     })
     return HttpResponse(template.render(context)) 
 	
