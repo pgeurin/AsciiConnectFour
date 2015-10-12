@@ -1,3 +1,8 @@
+# AsciiConnectFour
+# Philip Geurin
+# This is a module that simulates Connect Four and
+# creates an AI to play it.
+
 from django.shortcuts import render
 
 # Create your views here.
@@ -6,11 +11,6 @@ from django.http import HttpResponse
 
 import random
 import math
-# AsciiConnectFour
-# Philip Geurin
-# This is a module that simulates Connect Four and
-# creates an AI to play it.
-
 import random
 
 class Board:
@@ -398,15 +398,15 @@ def index(request):
     #    q = request.GET['q']
     #    q.string()
     if 'q' in request.GET and len(request.GET['q'].split())!=0:
-		#LATER: check to make sure nextPlay is a integer between 0 and 6.
+                #LATER: check to make sure nextPlay is a integer between 0 and 6.
         #build the board
-		q = request.GET['q']
-		nextPlay = request.GET['nextPlay']
-		b = request.GET['b']
+                q = request.GET['q']
+                nextPlay = request.GET['nextPlay']
+                b = request.GET['b']
         b = Board(7,6)
         b.setBoard(q)
-		#insert the players' move 
-		b.addmove(nextplay,'X') 
+                #insert the players' move 
+                b.addmove(nextplay,'X') 
 		                      #(they would probably like to see their move displayed before we think about it and then make our move... oh well! We'll separate them later!)
 		#see if they won
         if self.winsFor('X'):
@@ -415,45 +415,26 @@ def index(request):
         if self.isFull():
             print '\nThe game is a draw.\n\n'
 		#Insert the compters' move
-		po = Player('O', 'RANDOM', 3)
-		nextPlay = po.nextMove(b)
-		b.addmove(nextplay,'O')
+                po = Player('O', 'RANDOM', 3)
+                nextPlay = po.nextMove(b)
+                b.addmove(nextplay,'O')
 		#see if they won
-		if self.winsFor('O'):
+                if self.winsFor('O'):
             print '\n O wins! Too Bad!\n\n'
 		#see if it's a draw
         if self.isFull():
             print '\nThe game is a draw.\n\n'
 		#draw the new board, it's their move!
-		q=q+str(nextPlay)
+		#q=q+str(nextPlay)
+                q="write sommething"
+                nextPlay="writesomething"
     template = loader.get_template('emulate/home.html')
     context = RequestContext(request, {
         'nextPlay': nextPlay, #I need to access poem in there! will this do it?
-		'q': q, 
-		'b': b.htmlSelf(),
+                'q': q, 
+                'b': b.htmlSelf(),
     })
     return HttpResponse(template.render(context)) 
-	
-"""
-def index(request):
-	#take in the entry
-    query_string = ''
-    found_entries = None
-    if ('q' in request.GET) and request.GET['q'].strip():
-        query_string = request.GET['q']
-        entry_query = get_query(query_string, ['title', 'body',])        
-        found_entries = Entry.objects.filter(entry_query).order_by('-pub_date')
 
-	#process a poem
-	#d = createDictionary( 'shakespeare.txt' ) #(later change shakespeare to their entry above!)
-    #poem = generateText( d, 50)
-    poem = generateText( createDictionary( 'shakespeare.txt' ), 50)
-	
-    template = loader.get_template('emulate/home.html')
-    context = RequestContext(request, {
-        'poem': poem, #I need to access poem in there! will this do it?
-		'query_string': query_string, 
-		'found_entries': found_entries,
-    })
-    return HttpResponse(template.render(context)) 
-"""
+
+

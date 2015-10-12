@@ -1,4 +1,4 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+I <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
  <head>
 	<title>AsciiConnectFour</title>
@@ -157,10 +157,10 @@
 	<p> You move first. You are 'X'. Ascii is 'O'. </p>
 	<br/>
 	<p>
-	the board 'b' should be listed here:<br/>
-	{{ b }}<br/>
-	the last play choice by the computer 'nextplay' should be listed here:<br/> {{nextPlay}} <br/>
-	The order of moves 'q' should be listed here:<br/> {{q}} <br/>
+	the board 'b' should be listed here:
+	{{ b }}
+	the last play choice by the computer 'nextplay' should be listed here: {{nextPlay}}
+	The order of moves 'q' should be listed here: {{q}}
 	</p>
 	<br/>
 	<form action="" method="get">

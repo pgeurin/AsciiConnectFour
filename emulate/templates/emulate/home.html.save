@@ -1,4 +1,4 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<test!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
  <head>
 	<title>AsciiConnectFour</title>
@@ -141,7 +141,7 @@
 </head>
 <body>	
 			
-	<h1>AsciiConnectFour</h1> 
+	<h1>TEST AsciiConnectFour</h1> 
 	{% load staticfiles %}
 	<img src="{% static "emulate/pixeltriple2a.gif" %}" class="marginindent" height="4" width="650"> 
 	<!--<form style="padding-left: 260px;"> 
@@ -152,16 +152,13 @@
 	<br/>
 	<h2> Welcome to Ascii Connect Four </h2>
 	<p> You are about to play an AI named Ascii. </p>
+	<br/>
 	<p> Ascii calculates the next three moves into the future. </p>
+	<br/>
 	<p> Type a number to put your piece in that column. </p>
+	<br/>
 	<p> You move first. You are 'X'. Ascii is 'O'. </p>
 	<br/>
-	<p>
-	the board 'b' should be listed here:<br/>
-	{{ b }}<br/>
-	the last play choice by the computer 'nextplay' should be listed here:<br/> {{nextPlay}} <br/>
-	The order of moves 'q' should be listed here:<br/> {{q}} <br/>
-	</p>
 	<br/>
 	<form action="" method="get">
 	<label for="id_q"></label>
@@ -243,6 +240,9 @@ A third more opulent than your sisters? Speak."</textarea></p>
 	-->
 	</form>
 	<br/>
+	<p>
+	{{ b }}
+	</p>
 	<img src="{% static "emulate/pixeltriple2a.gif" %}" class="marginindent" height="4" width="650"> 
 	<br/>
 	<h2> Emulation: </h2>
