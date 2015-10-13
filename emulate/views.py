@@ -403,8 +403,8 @@ def index(request):
                 q = request.GET['q']
                 nextPlay = request.GET['nextPlay']
                 b = request.GET['b']
-        b = Board(7,6)
-        b.setBoard(q)
+                b = Board(7,6)
+                b.setBoard(q)
                 #insert the players' move 
                 b.addmove(nextplay,'X') 
 		                      #(they would probably like to see their move displayed before we think about it and then make our move... oh well! We'll separate them later!)
