@@ -46,8 +46,7 @@ class Board:
         s += '\n'
         return s       # the board is complete, return it
 
-	
-        def htmlSelf(self):
+    def htmlSelf(self):
         """ this method returns a string representation
             for an object of type Board as an overt html string.
         """
