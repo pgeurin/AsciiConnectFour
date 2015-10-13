@@ -400,34 +400,34 @@ def index(request):
     if 'q' in request.GET and len(request.GET['q'].split())!=0:
                 #LATER: check to make sure nextPlay is a integer between 0 and 6.
         #build the board
-                q = request.GET['q']
-                nextPlay = request.GET['nextPlay']
-                b = request.GET['b']
-                b = Board(7,6)
-                b.setBoard(q)
-                #insert the players' move 
-                b.addmove(nextplay,'X') 
-		                      #(they would probably like to see their move displayed before we think about it and then make our move... oh well! We'll separate them later!)
-		#see if they won
+        q = request.GET['q']
+        nextPlay = request.GET['nextPlay']
+        b = request.GET['b']
+        b = Board(7,6)
+        b.setBoard(q)
+        #insert the players' move 
+        b.addmove(nextplay,'X') 
+        #(they would probably like to see their move displayed before we think about it and then make our move... oh well! We'll separate them later!)
+	#see if they won
         if self.winsFor('X'):
             print '\n X wins! Congratulations!\n\n'
         # check if it's a draw
         if self.isFull():
             print '\nThe game is a draw.\n\n'
-		#Insert the compters' move
-                po = Player('O', 'RANDOM', 3)
-                nextPlay = po.nextMove(b)
-                b.addmove(nextplay,'O')
-		#see if they won
-                if self.winsFor('O'):
+        #Insert the compters' move
+        po = Player('O', 'RANDOM', 3)
+        nextPlay = po.nextMove(b)
+        b.addmove(nextplay,'O')
+        #see if they won
+        if self.winsFor('O'):
             print '\n O wins! Too Bad!\n\n'
-		#see if it's a draw
+        #see if it's a draw
         if self.isFull():
             print '\nThe game is a draw.\n\n'
-		#draw the new board, it's their move!
-		#q=q+str(nextPlay)
-                q="write sommething"
-                nextPlay="writesomething"
+    #draw the new board, it's their move!
+    #q=q+str(nextPlay)
+    q="write sommething"
+    nextPlay="writesomething"
     template = loader.get_template('emulate/home.html')
     context = RequestContext(request, {
         'nextPlay': nextPlay, #I need to access poem in there! will this do it?
