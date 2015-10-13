@@ -45,12 +45,13 @@ class Board:
 
         s += '\n'
         return s       # the board is complete, return it
+
 	
-	def htmlSelf(self)
-		""" this method returns a string representation
+        def htmlSelf(self)
+        """ this method returns a string representation
             for an object of type Board as an overt html string.
         """
-		s = ''   # the string to return
+        s = ''   # the string to return
         for row in range( self.height ):
             s += '|'   # add the spacer character
             for col in range( self.width ):
