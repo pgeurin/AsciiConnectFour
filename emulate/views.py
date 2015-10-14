@@ -59,8 +59,8 @@ class Board:
         s += '--'*self.width    # add the bottom of the board
         s += '-<br/>'
         for col in range( self.width ):
-            s += ' ' + str(col%10)
-        s += '<br/>'
+            s += '| ' + str(col%10)
+        s += '|<br/>'
         return s       # the board is complete, return it
 
     def set_board( self, LoS ):
@@ -407,7 +407,7 @@ def index(request):
         #insert the players' move 
         b.addMove(int(nextPlay),'X') 
         #(they would probably like to see their move displayed before we think about it and then make our move... oh well! We'll separate them later!)
-	#see if they won
+	    #see if they won
         if b.winsFor('X'):
             print '\n X wins! Congratulations!\n\n'
         # check if it's a draw
@@ -426,14 +426,13 @@ def index(request):
     #draw the new board, it's their move!
     #q=q+str(nextPlay)
     else:
-        b="try smeting"
-        q="write sommething"
-        nextPlay="writesomething"
+        b = Board(7,6)
+        q=""
+        nextPlay=""
     template = loader.get_template('emulate/home.html')
     context = RequestContext(request, {
         'b': b.htmlSelf(),
-        #'b': b.htmlSelf(),
-        'nextPlay': nextPlay, #I need to access poem in there! will this do it?
+        'nextPlay': nextPlay, 
         'q': q, 
         })
     return HttpResponse(template.render(context)) 
