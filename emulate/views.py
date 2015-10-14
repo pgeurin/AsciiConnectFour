@@ -431,7 +431,8 @@ def index(request):
     nextPlay="writesomething"
     template = loader.get_template('emulate/home.html')
     context = RequestContext(request, {
-        'b': b.htmlSelf(),
+        'b': b,
+        #'b': b.htmlSelf(),
         'nextPlay': nextPlay, #I need to access poem in there! will this do it?
         'q': q, 
         })
