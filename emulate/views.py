@@ -55,12 +55,12 @@ class Board:
             s += '|'   # add the spacer character
             for col in range( self.width ):
                 s += self.data[row][col] + '|'
-            s += '\n'
+            s += '<br/>'
         s += '--'*self.width    # add the bottom of the board
-        s += '-\n'
+        s += '-<br/>'
         for col in range( self.width ):
             s += ' ' + str(col%10)
-        s += '\n'
+        s += '<br/>'
         return s       # the board is complete, return it
 
     def set_board( self, LoS ):
@@ -431,7 +431,7 @@ def index(request):
         nextPlay="writesomething"
     template = loader.get_template('emulate/home.html')
     context = RequestContext(request, {
-        'b': b,
+        'b': b.htmlSelf(),
         #'b': b.htmlSelf(),
         'nextPlay': nextPlay, #I need to access poem in there! will this do it?
         'q': q, 
