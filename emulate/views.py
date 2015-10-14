@@ -388,6 +388,7 @@ print "Type a number to put your piece in that column."
 print "You move first. You are 'X'. Ascii is 'O'. "
 po = Player('O', 'RANDOM', 3)
 b = Board(7,6)
+#THIS LINE WAS REOMVED SIMPLY TO REMOVE THE INPUT() ERROR FROM PLAYGAME() WITHIN THE SSCRIPT
 #b.playGame('human', po)
 
 from django.template import RequestContext, loader
@@ -430,10 +431,10 @@ def index(request):
     nextPlay="writesomething"
     template = loader.get_template('emulate/home.html')
     context = RequestContext(request, {
+        'b': b.htmlSelf(),
         'nextPlay': nextPlay, #I need to access poem in there! will this do it?
-                'q': q, 
-                'b': b.htmlSelf(),
-    })
+        'q': q, 
+        })
     return HttpResponse(template.render(context)) 
 
 
