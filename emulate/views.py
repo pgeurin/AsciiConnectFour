@@ -408,20 +408,20 @@ def index(request):
         b.addMove(int(nextPlay),'X') 
         #(they would probably like to see their move displayed before we think about it and then make our move... oh well! We'll separate them later!)
 	#see if they won
-        if self.winsFor('X'):
+        if b.winsFor('X'):
             print '\n X wins! Congratulations!\n\n'
         # check if it's a draw
-        if self.isFull():
+        if b.isFull():
             print '\nThe game is a draw.\n\n'
         #Insert the compters' move
         po = Player('O', 'RANDOM', 3)
         nextPlay = po.nextMove(b)
         b.addmove(int(nextPlay),'O')
         #see if they won
-        if self.winsFor('O'):
+        if b.winsFor('O'):
             print '\n O wins! Too Bad!\n\n'
         #see if it's a draw
-        if self.isFull():
+        if b.isFull():
             print '\nThe game is a draw.\n\n'
     #draw the new board, it's their move!
     #q=q+str(nextPlay)
