@@ -405,7 +405,7 @@ def index(request):
         b = Board(7,6)
         b.setBoard(q)
         #insert the players' move 
-        b.addMove(nextplay,'X') 
+        b.addMove(nextPlay,'X') 
         #(they would probably like to see their move displayed before we think about it and then make our move... oh well! We'll separate them later!)
 	#see if they won
         if self.winsFor('X'):
