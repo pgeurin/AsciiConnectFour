@@ -59,7 +59,7 @@ class Board:
         s += '--'*self.width    # add the bottom of the board
         s += '-<br/>'
         for col in range( self.width ):
-            s += ' ' + str(col%10)
+            s += '  ' + str(col%10)
         s += ' <br/>'
         return s       # the board is complete, return it
 
