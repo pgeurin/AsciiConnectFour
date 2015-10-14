@@ -416,7 +416,7 @@ def index(request):
         #Insert the compters' move
         po = Player('O', 'RANDOM', 3)
         nextPlay = po.nextMove(b)
-        b.addmove(int(nextPlay),'O')
+        b.addMove(int(nextPlay),'O')
         #see if they won
         if b.winsFor('O'):
             print '\n O wins! Too Bad!\n\n'
