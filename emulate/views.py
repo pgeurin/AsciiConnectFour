@@ -396,7 +396,7 @@ from django.template import RequestContext, loader
 def index(request):
 	#take in the entry
 	#if ('q' in request.GET) and request.GET['q'].strip():
-    if 'q' in request.GET:
+    if 'q' in request.GET & 'b' in request.GET & 'nextPlay' in request.GET:
                 #LATER: check to make sure nextPlay is a integer between 0 and 6.
         #build the board
         q = request.GET['q']
@@ -425,9 +425,10 @@ def index(request):
             print '\nThe game is a draw.\n\n'
     #draw the new board, it's their move!
     #q=q+str(nextPlay)
-    b="try smeting"
-    q="write sommething"
-    nextPlay="writesomething"
+    else:
+        b="try smeting"
+        q="write sommething"
+        nextPlay="writesomething"
     template = loader.get_template('emulate/home.html')
     context = RequestContext(request, {
         'b': b,
