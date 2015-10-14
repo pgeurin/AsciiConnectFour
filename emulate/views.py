@@ -405,7 +405,7 @@ def index(request):
         b = Board(7,6)
         b.setBoard(q)
         #insert the players' move 
-        b.addMove(nextPlay,'X') 
+        b.addMove(int(nextPlay),'X') 
         #(they would probably like to see their move displayed before we think about it and then make our move... oh well! We'll separate them later!)
 	#see if they won
         if self.winsFor('X'):
@@ -416,7 +416,7 @@ def index(request):
         #Insert the compters' move
         po = Player('O', 'RANDOM', 3)
         nextPlay = po.nextMove(b)
-        b.addmove(nextPlay,'O')
+        b.addmove(int(nextPlay),'O')
         #see if they won
         if self.winsFor('O'):
             print '\n O wins! Too Bad!\n\n'
