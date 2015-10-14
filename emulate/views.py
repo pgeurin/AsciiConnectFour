@@ -396,9 +396,7 @@ from django.template import RequestContext, loader
 def index(request):
 	#take in the entry
 	#if ('q' in request.GET) and request.GET['q'].strip():
-    #    q = request.GET['q']
-    #    q.string()
-    if 'q' in request.GET and len(request.GET['q'].split())!=0:
+    if 'q' in request.GET:
                 #LATER: check to make sure nextPlay is a integer between 0 and 6.
         #build the board
         q = request.GET['q']
