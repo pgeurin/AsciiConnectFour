@@ -396,6 +396,7 @@ from django.template import RequestContext, loader
 def index(request):
 	#take in the entry
 	#if ('q' in request.GET) and request.GET['q'].strip():
+    endingNotice=''
     if ('q' in request.GET) and ('nextPlay' in request.GET):
                 #LATER: check to make sure nextPlay is a integer between 0 and 6.
         #build the board
@@ -409,20 +410,20 @@ def index(request):
         #(they would probably like to see their move displayed before we think about it and then make our move... oh well! We'll separate them later!)
 	    #see if they won
         if b.winsFor('X'):
-            print '\n X wins! Congratulations!\n\n'
+            endingNotice = 'X wins! Congratulations!'
         # check if it's a draw
         if b.isFull():
-            print '\nThe game is a draw.\n\n'
+            endingNotice = 'The game is a draw.'
         #Insert the compters' move
         po = Player('O', 'RANDOM', 3)
         nextPlay = po.nextMove(b)
         b.addMove(int(nextPlay),'O')
         #see if they won
         if b.winsFor('O'):
-            print '\n O wins! Too Bad!\n\n'
-        #see if it's a draw
+            endingNotice = 'O wins! Too Bad!'
+        #see if it's a draw AGAIN.
         if b.isFull():
-            print '\nThe game is a draw.\n\n'
+            endingNotice = 'The game is a draw.'
     #draw the new board, it's their move!
     #q=q+str(nextPlay)
         q+=str(nextPlay)
@@ -435,6 +436,7 @@ def index(request):
         'b': b.htmlSelf(),
         'nextPlay': nextPlay, 
         'q': q, 
+        'endingNotice': endingNotice
         })
     return HttpResponse(template.render(context)) 
 
