@@ -79,7 +79,7 @@
 			font-size: 13px;
 			line-height:130%;}
 		#board
-			{text-align:center;}
+			{vertical-align: middle;}
 		img
 			{display: block;}
 		input
@@ -164,6 +164,7 @@
 	<p>You move first. You are 'X'. Ascii is 'O'. </p>
     <span class="board">{{ b|safe }} </span><br/>
 	<p>Choose a column 1 through 6:</p>
+	<span class="board">
 	<form action="" method="get">
 	<label for="id_q"></label>
 			<!--<p><textarea cols="50" rows="10"></textarea></p>
@@ -180,3 +181,4 @@
 		    <!--nextPlay: <input type="text" id="id_b" name="b">{{b}}<br>
 			b: <input type="text" id="id_b" name="b"><br>-->
     </form>
+	</span>
