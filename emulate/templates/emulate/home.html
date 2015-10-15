@@ -170,7 +170,7 @@
 	<p>You move first. You are 'X'. Ascii is 'O'. </p>
     <div class="board">{{ b|safe }} </div><br/>
 	
-	{% if len(endingNotice)>0 %}
+	{% if (len(endingNotice) > 0) %}
 		<h2> {{endingNotice}} </h2>
 	{% else %}
 	
