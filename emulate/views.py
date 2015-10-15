@@ -401,7 +401,6 @@ def index(request):
         #build the board
         q = request.GET['q']
         nextPlay = request.GET['nextPlay']
-        b = request.GET['b']
         b = Board(7,6)
         b.setBoard(q)
         #insert the players' move 
