@@ -425,7 +425,7 @@ def index(request):
             print '\nThe game is a draw.\n\n'
     #draw the new board, it's their move!
     #q=q+str(nextPlay)
-    q+=nextPlay
+        q+=nextPlay
     else:
         b = Board(7,6)
         q=""
