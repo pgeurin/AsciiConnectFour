@@ -438,7 +438,7 @@ def index(request):
             'nextPlay': nextPlay, 
             'q': q, 
         })
-	else:
+    else:
         context = RequestContext(request, {
             'b': b.htmlSelf(),
             'nextPlay': nextPlay, 
