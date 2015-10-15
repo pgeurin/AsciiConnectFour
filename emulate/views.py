@@ -403,7 +403,7 @@ def index(request):
         nextPlay = request.GET['nextPlay']
         b = Board(7,6)
         b.setBoard(q)
-		q+=nextPlay
+        q+=nextPlay
         #insert the players' move 
         b.addMove(int(nextPlay),'X') 
         #(they would probably like to see their move displayed before we think about it and then make our move... oh well! We'll separate them later!)
@@ -425,7 +425,7 @@ def index(request):
             print '\nThe game is a draw.\n\n'
     #draw the new board, it's their move!
     #q=q+str(nextPlay)
-	q+=nextPlay
+    q+=nextPlay
     else:
         b = Board(7,6)
         q=""
