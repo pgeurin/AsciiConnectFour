@@ -65,17 +65,21 @@
 		h1 
 			{width:700px;
 			font-size:60px;
-			text-indent: 130px;}
+			text-indent: 100px;}
 			/*border-bottom-style:double;
 			border-bottom-color:black;*/
 		h2
-			{width:700px;}
+			{width:700px;
+			text-align:center;}
 		h3 
 			{line-height:90%;}
 		p 
-			{text-align: justify;
+			{text-indent: 100px;
+			text-align: justify;
 			font-size: 13px;
 			line-height:130%;}
+		#board
+			{text-align:center;}
 		img
 			{display: block;}
 		input
@@ -158,18 +162,18 @@
 	<p> Ascii calculates the next three moves into the future. </p>
 	<p> Type a number to put your piece in that column. </p>
 	<p>You move first. You are 'X'. Ascii is 'O'. </p>
-         {{ b|safe }}<br/>
-	<!--<p>Choose a column 1 through 6:</p>-->
+    <span class="board">{{ b|safe }} </span><br/>
+	<p>Choose a column 1 through 6:</p>
 	<form action="" method="get">
 	<label for="id_q"></label>
 			<!--<p><textarea cols="50" rows="10"></textarea></p>
            <input id="id_q" name="q" type="text"-->
-		   <input type="radio" id="id_nextPlay" name="nextPlay" value="1">
-		   <input type="radio" id="id_nextPlay" name="nextPlay" value="2">
-		   <input type="radio" id="id_nextPlay" name="nextPlay" value="3">
-		   <input type="radio" id="id_nextPlay" name="nextPlay" value="4">
-		   <input type="radio" id="id_nextPlay" name="nextPlay" value="5">
-		   <input type="radio" id="id_nextPlay" name="nextPlay" value="6">
+		   <input type="radio" id="id_nextPlay" name="nextPlay" value="1">1
+		   <input type="radio" id="id_nextPlay" name="nextPlay" value="2">2
+		   <input type="radio" id="id_nextPlay" name="nextPlay" value="3">3
+		   <input type="radio" id="id_nextPlay" name="nextPlay" value="4">4
+		   <input type="radio" id="id_nextPlay" name="nextPlay" value="5">5
+		   <input type="radio" id="id_nextPlay" name="nextPlay" value="6">6
 		   <!--<p><textarea cols="1" rows="1" id="id_nextPlay" name="nextPlay" type="text" ></textarea></p>-->
 		   <input type="submit" value="Submit">
 		   <p class=hidden><textarea cols="1" rows="1" id="id_q" name="q" type="text" >{{q}}</textarea></p>
