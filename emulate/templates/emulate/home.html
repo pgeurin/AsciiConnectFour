@@ -127,6 +127,9 @@
 			{width: 160px;
 			height: 530px;
 			overflow: auto;}
+		.hidden{
+			visibility: hidden;
+			}
 	</style>
 	
 	<title>Area Chart</title>
@@ -163,8 +166,8 @@
            <input id="id_q" name="q" type="text"-->
 			<p><textarea cols="1" rows="1" id="id_q" name="q" type="text" ></textarea></p>
 		   <br/>
-		   <p><textarea cols="1" rows="1" id="id_b" name="b" type="text" >{{b}}</textarea></p>
-		   <p><textarea cols="1" rows="1" id="id_nextPlay" name="nextPlay" type="text" >{{nextPlay}}</textarea></p>
+		   <p class=hidden><textarea cols="1" rows="1" id="id_b" name="b" type="text" >{{b}}</textarea></p>
+		   <p class=hidden><textarea cols="1" rows="1" id="id_nextPlay" name="nextPlay" type="text" >{{nextPlay}}</textarea></p>
 		    <!--nextPlay: <input type="text" id="id_b" name="b">{{b}}<br>
 			b: <input type="text" id="id_b" name="b"><br>-->
 		   <input type="submit" value="Submit">
