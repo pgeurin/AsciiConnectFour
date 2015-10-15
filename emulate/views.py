@@ -396,7 +396,7 @@ from django.template import RequestContext, loader
 def index(request):
 	#take in the entry
 	#if ('q' in request.GET) and request.GET['q'].strip():
-    endingNotice=''
+    endingNotice='No Ending Notice'
     if ('q' in request.GET) and ('nextPlay' in request.GET):
                 #LATER: check to make sure nextPlay is a integer between 0 and 6.
         #build the board
@@ -436,7 +436,8 @@ def index(request):
         'b': b.htmlSelf(),
         'nextPlay': nextPlay, 
         'q': q, 
-        'endingNotice': endingNotice
+		if endingNotice!='No Ending Notice':
+            'endingNotice': endingNotice
         })
     return HttpResponse(template.render(context)) 
 

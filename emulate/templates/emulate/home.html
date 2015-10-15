@@ -57,10 +57,10 @@
 			margin-right:auto;
 			margin-left:auto;
 			/*background-image:url(emulate/static/Images/Papers5.png);*/ /* get smaller background*/
-			background-image:url(/static/emulate/Papers5.png); /* get smaller background*/
+			/*background-image:url(/static/emulate/Papers5.png); */ /* get smaller background*/
 			background-size:800px;
 			background-repeat:no-repeat;
-			background-color:black;
+			background-color:white;
 			padding-left: 50px;}
 		h1 
 			{width:700px;
@@ -170,7 +170,7 @@
 	<p>You move first. You are 'X'. Ascii is 'O'. </p>
     <div class="board">{{ b|safe }} </div><br/>
 	
-	{% if (len(endingNotice) > 0) %}
+	{% if endingNotice %}
 		<h2> {{endingNotice}} </h2>
 	{% else %}
 	
