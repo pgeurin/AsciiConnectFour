@@ -138,7 +138,9 @@
 			height: 530px;
 			overflow: auto;}
 		.hidden{
+			position:relative;
 			visibility: hidden;
+			top: 200px;
 			}
 	</style>
 	
@@ -156,7 +158,6 @@
 			
 	<h1>AsciiConnectFour</h1> 
 	{% load staticfiles %}
-	<img src="{% static "emulate/pixeltriple2a.gif" %}" class="marginindent" height="4" width="650"> 
 	<!--<form style="padding-left: 260px;"> 
 		<input style="font-family:Georgia; font-size: 20px;" class="fillin" type="text" name="username" size="30" maxlength="100" value="Ask a Question:"/> 
 		<input type="image" src="/static/images/buttongear.png" alt="Submit Form"> 
