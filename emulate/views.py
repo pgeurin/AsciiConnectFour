@@ -432,11 +432,17 @@ def index(request):
         q=""
         nextPlay=""
     template = loader.get_template('emulate/home.html')
-    context = RequestContext(request, {
-        'b': b.htmlSelf(),
-        'nextPlay': nextPlay, 
-        'q': q, 
-		if endingNotice!='No Ending Notice':
+    if endingNotice=='No Ending Notice':
+        context = RequestContext(request, {
+            'b': b.htmlSelf(),
+            'nextPlay': nextPlay, 
+            'q': q, 
+        })
+	else:
+        context = RequestContext(request, {
+            'b': b.htmlSelf(),
+            'nextPlay': nextPlay, 
+            'q': q, 
             'endingNotice': endingNotice
         })
     return HttpResponse(template.render(context)) 
