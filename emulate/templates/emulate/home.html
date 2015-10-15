@@ -65,7 +65,8 @@
 		h1 
 			{width:700px;
 			font-size:60px;
-			text-indent: 100px;}
+			text-align:center;
+			/*text-indent: 100px;*/}
 			/*border-bottom-style:double;
 			border-bottom-color:black;*/
 		h2
@@ -79,20 +80,23 @@
 			font-size: 13px;
 			line-height:130%;}
 		.board
-			{position: relative;
-			left: 170px;
+			{text-align:center;
+			/*position: relative;
+			left: 170px;*/
 			/*vertical-align: middle;
 			text-align:center;*/}
 		.buttons
-			{position: relative;
-			left: 140px;
+			{text-align:center;
+			/*position: relative;
+			left: 140px;*/}
 		img
 			{display: block;}
 		input
 			{vertical-align: middle;
 			text-align:center;}
 		.marginindent
-			{margin-left: 40px;}
+			{/*margin-left: 40px;*/
+			text-align:center;}
 		th
 			{text-align:center;
 			font-size: 12px;}
@@ -174,12 +178,13 @@
 		<h2> {{endingNotice}} </h2>
 	{% else %}
 	
-	<p>Choose a column 1 through 6:</p>
+	<p class="buttons">Choose a column 1 through 6:</p>
 	<div class="buttons">
 	<form action="" method="get">
 	<label for="id_q"></label>
 			<!--<p><textarea cols="50" rows="10"></textarea></p>
            <input id="id_q" name="q" type="text"-->
+		   <input type="radio" id="id_nextPlay" name="nextPlay" value="0">0
 		   <input type="radio" id="id_nextPlay" name="nextPlay" value="1">1
 		   <input type="radio" id="id_nextPlay" name="nextPlay" value="2">2
 		   <input type="radio" id="id_nextPlay" name="nextPlay" value="3">3
@@ -188,7 +193,7 @@
 		   <input type="radio" id="id_nextPlay" name="nextPlay" value="6">6
 		   <!--<p><textarea cols="1" rows="1" id="id_nextPlay" name="nextPlay" type="text" ></textarea></p>-->
 		   <input type="submit" value="Submit">
-		   <p class=hidden><textarea cols="1" rows="1" id="id_q" name="q" type="text" >{{q}}</textarea></p>
+		   <p class=hidden><textarea class=hidden cols="1" rows="1" id="id_q" name="q" type="text" >{{q}}</textarea></p>
 		    <!--nextPlay: <input type="text" id="id_b" name="b">{{b}}<br>
 			b: <input type="text" id="id_b" name="b"><br>-->
     </form>
