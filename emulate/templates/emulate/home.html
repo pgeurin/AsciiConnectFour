@@ -163,9 +163,9 @@
 	<p> Ascii calculates the next three moves into the future. </p>
 	<p> Type a number to put your piece in that column. </p>
 	<p>You move first. You are 'X'. Ascii is 'O'. </p>
-    <span class="board">{{ b|safe }} </span><br/>
+    <div class="board">{{ b|safe }} </div><br/>
 	<p>Choose a column 1 through 6:</p>
-	<span class="board">
+	<div class="board">
 	<form action="" method="get">
 	<label for="id_q"></label>
 			<!--<p><textarea cols="50" rows="10"></textarea></p>
@@ -182,4 +182,4 @@
 		    <!--nextPlay: <input type="text" id="id_b" name="b">{{b}}<br>
 			b: <input type="text" id="id_b" name="b"><br>-->
     </form>
-	</span>
+	</div>
