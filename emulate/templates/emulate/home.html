@@ -42,7 +42,7 @@
 					font-size: 100%;
 				}
 				p{
-					font-size: 150%
+					font-size: 125%
 				}
 			}
 			@media (max-width: 300px){
@@ -52,6 +52,9 @@
 				p{
 					font-size: 150%
 				}
+			}
+			p{
+				font-size: 2.6vw;
 			}
 		</style>
 		<title>Area Chart</title>
@@ -91,31 +94,5 @@
 			<p> Ascii calculates the next three moves into the future. </p>
 			<p> Click a button to put your piece in that column. </p>
 			<p>You move first. You are 'X'. Ascii is 'O'. </p>
-		</div>
-
-		<div class="frontpage">
-			<div class="board">{{ b|safe }} </div><br/>
-			
-			{% if endingNotice %}
-				<h2> {{endingNotice}} </h2>
-			{% else %}
-			
-			<div class="buttons">
-			<form action="" method="get">
-			<label for="id_q"></label>
-				   <input t ype="radio" id="id_nextPlay" name="nextPlay" value="0">0
-				   <input type="radio" id="id_nextPlay" name="nextPlay" value="1">1
-				   <input type="radio" id="id_nextPlay" name="nextPlay" value="2">2
-				   <input type="radio" id="id_nextPlay" name="nextPlay" value="3">3
-				   <input type="radio" id="id_nextPlay" name="nextPlay" value="4">4
-				   <input type="radio" id="id_nextPlay" name="nextPlay" value="5">5
-				   <input type="radio" id="id_nextPlay" name="nextPlay" value="6">6 
-				   <br/>
-				   <input type="submit" value="Submit">
-				   <br/>
-				   <input class=hidden type="radio" id="id_q" name="q" checked value={{q}}>
-		    </form>
-	    	{% endif %}
-			</div>
 		</div>
 	</body>
