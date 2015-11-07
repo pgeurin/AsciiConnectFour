@@ -1,91 +1,10 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
-<link href="http://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
-<style>
-  h2 {
-    font-family: Lobster, Monospace;
-  }
-
-  .thick-green-border {
-    border-color: green;
-    border-width: 10px;
-    border-style: solid;
-    border-radius: 50%;
-  }
-
-</style>
-
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-xs-8">
-      <h2 class="text-primary text-center">CatPhotoApp</h2>
-    </div>
-    <div class="col-xs-4">
-      <a href="#"><img class="img-responsive thick-green-border" src="https://bit.ly/fcc-relaxing-cat"></a>
-    </div>
-  </div>
-  <img src="http://bit.ly/fcc-running-cats" class="img-responsive">
-  <div class="row">
-    <div class="col-xs-4">
-      <button class="btn btn-block btn-primary"><i class="fa fa-thumbs-up"></i> Like</button>
-    </div>
-    <div class="col-xs-4">
-      <button class="btn btn-block btn-info"><i class="fa fa-info-circle"></i> Info</button>
-    </div>
-    <div class="col-xs-4">
-      <button class="btn btn-block btn-danger"><i class="fa fa-trash"></i> Delete</button>
-    </div>
-  </div>
-  <p>Things cats <span class="text-danger">love:</span></p>
-  <ul>
-    <li>cat nip</li>
-    <li>laser pointers</li>
-    <li>lasagna</li>
-  </ul>
-  <p>Top 3 things cats hate:</p>
-  <ol>
-    <li>flea treatment</li>
-    <li>thunder</li>
-    <li>other cats</li>
-  </ol>
-  <form action="/submit-cat-photo">
-    <div class="row">
-      <div class="col-xs-6">
-        <label><input type="radio" name="indoor-outdoor"> Indoor</label>
-      </div>
-      <div class="col-xs-6">
-        <label><input type="radio" name="indoor-outdoor"> Outdoor</label>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-4">
-        <label><input type="checkbox" name="personality"> Loving</label>
-      </div>
-      <div class="col-xs-4">
-        <label><input type="checkbox" name="personality"> Lazy</label>
-      </div>
-      <div class="col-xs-4">
-        <label><input type="checkbox" name="personality"> Crazy</label>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-7">
-        <input type="text" class="form-control" placeholder="cat photo URL" required>
-      </div>
-      <div class="col-xs-5">
-        <button type="submit" class="btn btn-primary"><i class="fa fa-paper-plane"></i> Submit</button>
-      </div>
-    </div>
-  </form>
-</div>
-
-<!-- 
-<html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> <html>
 	<head>
 		<title>AsciiConnectFour</title>
 		{% load staticfiles %}
 		<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<style type="text/css">
 			body{
 				font-family:Courier;
@@ -170,4 +89,3 @@
 			<p>You move first. You are 'X'. Ascii is 'O'. </p>
 		</div>
 	</body>
--->
