@@ -57,7 +57,7 @@ class Board:
                 s += self.data[row][col] + '|'
             s += '<br/>'
         s += '--'*self.width    # add the bottom of the board
-        s += '-<br/>-'
+        s += '-<br/>'
         for col in range( self.width ):
             s += str(col%10) + ' ' 
         s += '<br/>'

@@ -3,12 +3,14 @@
 	<head>
 		<title>AsciiConnectFour</title>
 		{% load staticfiles %}
+		<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
 		<style type="text/css">
 			body{
 				font-family:Courier;
 			}
 			h1{
 				text-align: center;
+				font-size: 8vmin
 			}
 			.frontpage{
 				font-size: 5vmin;
@@ -81,15 +83,15 @@
 				   <br/>
 				   <input type="submit" value="Submit">
 				   <br/>
-				   <input class=hidden type="radio" id="id_q" name="q" checked value={{q}}>
+				   <input class=hidden type="radio" id="id_q" name="q" checked value={{q}}><br/>
 		    </form>
 	    	{% endif %}
 			</div>
 		</div>
 	    <div class="rules">
-			<p> You are about to play an AI named Ascii. </p>
-			<p> Ascii calculates the next three moves into the future. </p>
-			<p> Click a button to put your piece in that column. </p>
+			<p> You are about to play an AI named Ascii. </p><br/>
+			<p> Ascii calculates the next three moves into the future. </p><br/>
+			<p> Click a button to put your piece in that column. </p><br/>
 			<p>You move first. You are 'X'. Ascii is 'O'. </p>
 		</div>
 	</body>
