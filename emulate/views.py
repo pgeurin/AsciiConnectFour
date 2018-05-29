@@ -24,7 +24,7 @@ class Board:
         self.height = height
         self.data = [ [' ']*width for row in range(height) ]
         # do not need to return inside a constructor!
-        
+
 
     def __repr__(self):
         """ this method returns a string representation
@@ -39,7 +39,7 @@ class Board:
 
         s += '--'*self.width    # add the bottom of the board
         s += '-\n'
-        
+
         for col in range( self.width ):
             s += ' ' + str(col%10)
 
@@ -59,7 +59,7 @@ class Board:
         s += '--'*self.width    # add the bottom of the board
         s += '-<br/>'
         for col in range( self.width ):
-            s += str(col%10) + ' ' 
+            s += str(col%10) + ' '
         s += '<br/>'
         return s       # the board is complete, return it
 
@@ -70,7 +70,7 @@ class Board:
         for row in range( self.height ):
             for col in range( self.width ):
                 self.data[row][col] = LoS[row][col]
-                
+
 
     def setBoard( self, moves, show=False ):
         """ sets the board according to a string
@@ -120,7 +120,7 @@ class Board:
                 self.data[row][col] = ox
                 return
             row -= 1
-        
+
     def addMove2( self, col, ox ):
         """ adds checker ox into column col
             does not need to check for validity...
@@ -144,7 +144,7 @@ class Board:
                 return
         # it's empty, just return
         return
-        
+
     def allowsMove( self, col ):
         """ returns True if a move to col is allowed
             in the board represented by self
@@ -205,7 +205,7 @@ class Board:
         """ hosts a game of Connect Four """
 
         nextCheckerToMove = 'X'
-        
+
         while True:
             # print the board
             print self
@@ -247,7 +247,7 @@ and ask the user to input the next column to move for that player"""
             turn=turn+1
             # print the board
             print self
-            
+
             if player[turn%2]=='human': # get the next move from the player if HUMAN...
                 col = -1
                 while not self.allowsMove( col ):
@@ -258,7 +258,7 @@ and ask the user to input the next column to move for that player"""
                 print "Thinking..."
                 print
                 self.addMove(player[turn%2].nextMove(b),player[turn%2].ox)
-                
+
             # check if the game is over
             if self.winsFor( nextCheckerToMove ):
                 print self
@@ -291,7 +291,7 @@ class  Player:
         """ this method returns a string representation
             for an object of type Player
         """
-        
+
     def __repr__( self ):
         """ creates an appropriate string """
         s = "Player for " + self.ox + "\n"
@@ -336,7 +336,7 @@ scores list, this method will return its COLUMN number"""
         for col in range(b.width):
             if b.allowsMove(col)==False:
                 scores[col]=-2.0
-            elif b.winsFor(self.ox)==True: #is this line necessary? especially if the previous line 
+            elif b.winsFor(self.ox)==True: #is this line necessary? especially if the previous line
                 scores[col]=[100]
             elif b.winsFor(self.oppCh())==True:
                 scores[col]=[0.0]
@@ -358,7 +358,7 @@ integer -- namely, the column number that the calling object
         scores=self.scoresFor(b)
         #b.addMove(self.tiebreakMove(scores),self.ox)
         return self.tiebreakMove(scores)
-        
+
 
 def findMaxScores(scores):
     """takes the list 'scores' and outputs a list of columns which
@@ -405,8 +405,8 @@ def index(request):
         b = Board(7,6)
         b.setBoard(q)
         q+=str(nextPlay)
-        #insert the players' move 
-        b.addMove(int(nextPlay),'X') 
+        #insert the players' move
+        b.addMove(int(nextPlay),'X')
         #(they would probably like to see their move displayed before we think about it and then make our move... oh well! We'll separate them later!)
 	    #see if they won
         if b.winsFor('X'):
@@ -435,17 +435,14 @@ def index(request):
     if endingNotice=='No Ending Notice':
         context = RequestContext(request, {
             'b': b.htmlSelf(),
-            'nextPlay': nextPlay, 
-            'q': q, 
+            'nextPlay': nextPlay,
+            'q': q,
         })
     else:
         context = RequestContext(request, {
             'b': b.htmlSelf(),
-            'nextPlay': nextPlay, 
-            'q': q, 
+            'nextPlay': nextPlay,
+            'q': q,
             'endingNotice': endingNotice
         })
-    return HttpResponse(template.render(context)) 
-
-
-
+    return HttpResponse(template.render(context))
